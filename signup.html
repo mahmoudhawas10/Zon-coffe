@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Signup Page</title>
+  <link rel="stylesheet" href="css/stylesignup.css">
+</head>
+<body>
+  <div class="signup-container">
+    <div class="signup-form">
+      <h2>Sign Up</h2>
+      <form action="#" id="sign">
+        <div class="input-field">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-field">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-field">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-field">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit" onclick="redirectToLogin()">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById('sign').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      let username = document.getElementById('username').value;
+      let email = document.getElementById('email').value;
+
+      let password = document.getElementById('password').value;
+      let confirm_password= document.getElementById('confirm-password').value;
+
+  
+      if (username && email && password && confirm_password) {
+          window.location.href = "login.html"; 
+      } else {
+          alert("يرجى ملء جميع الحقول");         
+      }
+  });
+    
+  </script>
+</body>
+</html>
